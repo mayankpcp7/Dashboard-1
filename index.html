@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/root.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/img/webp/logo.webp"
+      type="image/x-icon"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <section class="bg_gray_light min-vh-100 pb-4">
+      <div class="container_coustome">
+        <div
+          id="show_side"
+          class="d-flex flex-column justify-content-between min-vh-100 bg-white align-items-center leftside_bar py-5 mb-4"
+        >
+          <div
+            class="d-flex flex-column leftside_gap_67 align-items-center tabs"
+          >
+            <img
+              src="./assets/img/webp/logo.webp"
+              alt="lgo"
+              width="37"
+              height="36"
+              class="cursor_pointer"
+            />
+            <span
+              class="side_line position-relative tablinks active"
+              onclick="openDashboard(event, 'tab_1')"
+              id="defaultOpen"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g opacity="0.4">
+                  <path
+                    d="M3.99998 0H6.99998C9.20911 0 11 1.79086 11 3.99998V6.99998C11 9.20911 9.20911 11 6.99998 11H3.99998C1.79086 11 0 9.20916 0 6.99998V3.99998C0 1.79086 1.79086 0 3.99998 0Z"
+                    fill="#2E2E2E"
+                  />
+                  <path
+                    d="M17 0H20C22.2091 0 24 1.79086 24 3.99998V6.99998C24 9.20911 22.2091 11 20 11H17C14.7909 11 13 9.20911 13 6.99998V3.99998C13 1.79086 14.7908 0 17 0Z"
+                    fill="#2E2E2E"
+                  />
+                  <path
+                    d="M3.99998 13H6.99998C9.20911 13 11 14.7909 11 17V20C11 22.2091 9.20911 24 6.99998 24H3.99998C1.79086 24 0 22.2092 0 20V17C0 14.7909 1.79086 13 3.99998 13Z"
+                    fill="#2E2E2E"
+                  />
+                  <path
+                    d="M17 13H20C22.2091 13 24 14.7909 24 17V20C24 22.2092 22.2091 24 20 24H17C14.7909 24 13 22.2092 13 20V17C13 14.7909 14.7908 13 17 13Z"
+                    fill="#2E2E2E"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span
+              class="side_line position-relative tablinks"
+              onclick="openDashboard(event, 'tab_2')"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g opacity="0.4">
+                  <path
+                    d="M15 8.00002H21.54C21.1909 7.0749 20.6485 6.2349 19.949 5.53604L16.465 2.05004C15.7653 1.35137 14.9251 0.80935 14 0.460037V7.00004C14 7.55227 14.4477 8.00002 15 8.00002Z"
+                    fill="#2E2E2E"
+                  />
+                  <path
+                    d="M21.976 9.99998H15C13.3431 9.99998 12 8.65683 12 6.99998V0.024C11.839 0.0129844 11.678 0 11.515 0H6.99997C4.23992 0.00332812 2.00328 2.23997 2 5.00002V19C2.00328 21.76 4.23992 23.9967 6.99997 24H17C19.76 23.9967 21.9966 21.76 22 19V10.485C22 10.322 21.987 10.161 21.976 9.99998Z"
+                    fill="#2E2E2E"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span
+              class="side_line position-relative tablinks"
+              onclick="openDashboard(event, 'tab_3')"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g opacity="0.4" clip-path="url(#clip0_2_19)">
+                  <path
+                    d="M12 6C11.2044 6 10.4413 6.31607 9.87868 6.87868C9.31607 7.44129 9 8.20435 9 9V21C9 21.7956 9.31607 22.5587 9.87868 23.1213C10.4413 23.6839 11.2044 24 12 24C12.7956 24 13.5587 23.6839 14.1213 23.1213C14.6839 22.5587 15 21.7956 15 21V9C15 8.20435 14.6839 7.44129 14.1213 6.87868C13.5587 6.31607 12.7956 6 12 6Z"
+                    fill="#2E2E2E"
+                  />
+                  <path
+                    d="M21 0C20.2044 0 19.4413 0.31607 18.8787 0.87868C18.3161 1.44129 18 2.20435 18 3V21C18 21.7956 18.3161 22.5587 18.8787 23.1213C19.4413 23.6839 20.2044 24 21 24C21.7956 24 22.5587 23.6839 23.1213 23.1213C23.6839 22.5587 24 21.7956 24 21V3C24 2.20435 23.6839 1.44129 23.1213 0.87868C22.5587 0.31607 21.7956 0 21 0V0Z"
+                    fill="#2E2E2E"
+                  />
+                  <path
+                    d="M3 12C2.20435 12 1.44129 12.3161 0.87868 12.8787C0.31607 13.4413 0 14.2044 0 15L0 21C0 21.7956 0.31607 22.5587 0.87868 23.1213C1.44129 23.6839 2.20435 24 3 24C3.79565 24 4.55871 23.6839 5.12132 23.1213C5.68393 22.5587 6 21.7956 6 21V15C6 14.2044 5.68393 13.4413 5.12132 12.8787C4.55871 12.3161 3.79565 12 3 12Z"
+                    fill="#2E2E2E"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_2_19">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </span>
+            <span
+              class="side_line position-relative tablinks"
+              onclick="openDashboard(event, 'tab_4')"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+              >
+                <g opacity="0.4">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.5 7H19V4.5C19 3.67157 18.3284 3 17.5 3C17.4383 3 17.3767 3.00381 17.3154 3.0114L4.16959 4.64132C2.92758 4.80692 2 5.86638 2 7.11939V8.05051C2.63526 7.40223 3.52066 7 4.5 7ZM20.5 8H4.5C3.81814 8 3.18214 8.27292 2.71424 8.75041L2 9.47928V20.5C2 21.8807 3.11929 23 4.5 23H20.5C21.8807 23 23 21.8807 23 20.5V19H17.5C15.567 19 14 17.433 14 15.5C14 13.567 15.567 12 17.5 12H23V10.5C23 9.11929 21.8807 8 20.5 8ZM17.5 13C16.1193 13 15 14.1193 15 15.5C15 16.8807 16.1193 18 17.5 18H23V13H17.5Z"
+                    fill="#2E2E2E"
+                  />
+                </g>
+              </svg>
+            </span>
+          </div>
+          <div class="d-flex flex-column align-items-center gap-5">
+            <a
+              href="#"
+              class="side_line position-relative tablinks"
+              onclick="openDashboard(event, 'tab_5')"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g opacity="0.4">
+                  <path
+                    d="M1.60706 18C2.43422 19.4356 4.26858 19.9288 5.70417 19.1017C5.70516 19.1011 5.7061 19.1005 5.70708 19.1L6.15206 18.843C6.99206 19.5616 7.9576 20.119 9.00005 20.487V21C9.00005 22.6568 10.3432 24 12 24C13.6569 24 15 22.6568 15 21V20.487C16.0426 20.1184 17.0082 19.5604 17.848 18.841L18.295 19.099C19.731 19.9274 21.5666 19.4349 22.3951 17.999C23.2235 16.563 22.731 14.7274 21.295 13.899L20.851 13.643C21.0509 12.5554 21.0509 11.4405 20.851 10.353L21.295 10.097C22.731 9.26855 23.2235 7.43292 22.3951 5.99695C21.5666 4.56103 19.731 4.06852 18.295 4.89694L17.85 5.15395C17.0092 4.43616 16.043 3.87984 15 3.513V3C15 1.34316 13.6569 0 12 0C10.3432 0 9.00005 1.34316 9.00005 3V3.513C7.95746 3.88158 6.99188 4.43958 6.15206 5.15902L5.70506 4.90003C4.2691 4.07156 2.43347 4.56408 1.60505 6C0.776627 7.43592 1.2691 9.27159 2.70506 10.1L3.14906 10.356C2.94919 11.4435 2.94919 12.5584 3.14906 13.646L2.70506 13.902C1.27308 14.7326 0.782205 16.5647 1.60706 18ZM12 8.00002C14.2092 8.00002 16 9.79088 16 12C16 14.2091 14.2092 16 12 16C9.79092 16 8.00006 14.2091 8.00006 12C8.00006 9.79088 9.79092 8.00002 12 8.00002Z"
+                    fill="black"
+                  />
+                </g>
+              </svg>
+            </a>
+            <a href="#" class="exist_icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g opacity="0.4">
+                  <path
+                    d="M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H9"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M16 17L21 12L16 7"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M21 12H9"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="dashboard_ps">
+          <div
+            class="navpy_40 d-flex align-items-center justify-content-between"
+          >
+            <a href="#" class="ff_Dm_sans fw-bold fs_3xl clr_black"
+              >Dashboard</a
+            >
+            <div class="d-flex align-items-center gap-md-4 gap-2">
+              <div
+                class="d-flex gap-4 align-items-center bg-white ps-3 w_351 me-4 rounded-2 search_input d-none"
+              >
+                <img
+                  src="./assets/img/webp/search.webp"
+                  alt="search"
+                  width="24"
+                  height="24"
+                />
+                <input
+                  type="text"
+                  placeholder="Search for transaction, item, etc"
+                  class="border-0 ff_Dm_sans fs_md fw-normal clr_gray w-100 rounded-2"
+                />
+              </div>
+              <a href="#" class="bell_icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 28 28"
+                  fill="none"
+                >
+                  <g>
+                    <path
+                      d="M5.18504 9.00016L5.18504 9.00014C5.6033 7.11895 6.63839 5.43155 8.12577 4.20619C9.61316 2.98083 11.4675 2.28783 13.3939 2.23737C15.3204 2.1869 17.2085 2.78185 18.758 3.92766C20.3075 5.07346 21.4295 6.70435 21.9457 8.56106L21.8493 8.58785L21.9457 8.56107L24.1622 16.536C24.1623 16.5361 24.1623 16.5362 24.1623 16.5363C24.3129 17.0708 24.3369 17.633 24.2323 18.1784C24.1278 18.7237 23.8976 19.2372 23.5599 19.678C23.5599 19.6781 23.5598 19.6782 23.5597 19.6783L23.4803 19.6175C23.1552 20.0488 22.734 20.3983 22.2502 20.6383C21.7664 20.8783 21.2332 21.0021 20.6932 21L5.18504 9.00016ZM5.18504 9.00016L3.47004 16.7188C3.35307 17.245 3.35576 17.7908 3.47792 18.3158C3.60008 18.8409 3.83858 19.3318 4.17584 19.7523C4.51309 20.1728 4.94048 20.5122 5.42645 20.7455C5.91243 20.9788 6.44458 21.0999 6.98364 21.1L20.6928 21.1L5.18504 9.00016ZM26.2178 15.9658L26.2382 16.039H26.2388C26.4574 16.8686 26.4872 17.737 26.3254 18.5802C26.1589 19.4483 25.7939 20.266 25.259 20.9697C24.7241 21.6733 24.0338 22.2438 23.2419 22.6364C22.4501 23.0291 21.5782 23.2334 20.6943 23.2333H19.7167H19.6349L19.6187 23.3134C19.3555 24.6095 18.6523 25.7747 17.6283 26.6117C16.6044 27.4487 15.3225 27.9059 14 27.9059C12.6775 27.9059 11.3956 27.4487 10.3716 26.6117C9.34766 25.7747 8.6445 24.6095 8.38133 23.3134L8.36506 23.2333H8.28333H6.98366C6.12506 23.2334 5.27742 23.0406 4.50332 22.6691C3.72921 22.2977 3.04841 21.7572 2.51118 21.0874C1.97395 20.4177 1.594 19.6358 1.39938 18.7996C1.20477 17.9633 1.20046 17.094 1.38678 16.2559L3.10294 8.53839C3.62451 6.19288 4.91513 4.08901 6.76965 2.5612C8.62418 1.0334 10.9362 0.169334 13.3382 0.106358C15.7401 0.0433828 18.0942 0.78511 20.0263 2.21364C21.9583 3.64217 23.3574 5.67551 24.0011 7.99046L26.2178 15.9658ZM10.7147 23.2333H10.5732L10.6204 23.3667C10.8677 24.0662 11.3251 24.6722 11.9299 25.1018C12.5348 25.5314 13.2577 25.7636 13.9996 25.7667L14.0004 25.7667C14.7423 25.7636 15.4652 25.5314 16.07 25.1018C16.6749 24.6722 17.1323 24.0662 17.3796 23.3667L17.4267 23.2333H17.2853H10.7147Z"
+                      fill="#6D7D93"
+                      stroke="white"
+                      stroke-width="0.2"
+                    />
+                  </g>
+                </svg>
+              </a>
+              <a href="#" class="mx-lg-2 comment_icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 28 28"
+                  fill="none"
+                >
+                  <path
+                    d="M25.3077 13.3718C25.312 15.0301 24.9246 16.666 24.1769 18.1462C23.2904 19.9199 21.9276 21.4118 20.2412 22.4548C18.5547 23.4977 16.6111 24.0506 14.6282 24.0513C12.9699 24.0557 11.334 23.6682 9.85384 22.9206L2.69231 25.3077L5.07949 18.1462C4.33184 16.666 3.94439 15.0301 3.94872 13.3718C3.94948 11.3889 4.50231 9.44538 5.54526 7.75889C6.58822 6.07241 8.08011 4.70961 9.85384 3.82313C11.334 3.07548 12.9699 2.68803 14.6282 2.69236H15.2564C17.8752 2.83683 20.3487 3.94219 22.2033 5.79677C24.0579 7.65135 25.1632 10.1248 25.3077 12.7436V13.3718Z"
+                    stroke="#6D7D93"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <div class="d-flex align-items-center gap-1 dropdown">
+                <img
+                  src="./assets/img/webp/nav_man.webp"
+                  alt="man"
+                  width="36"
+                  height="36"
+                  class="rounded-pill"
+                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6 9L12 15L18 9"
+                    stroke="#6D7D93"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div class="dropdown-content py-2">
+                  <p class="mb-2 ff_Dm_sans fs_md fw-bold clr_gray px-2">
+                    Ankit
+                  </p>
+                  <p class="mb-2 ff_Dm_sans fs_md fw-bold clr_gray px-2">Id</p>
+                  <p class="mb-0 ff_Dm_sans fs_md fw-bold clr_gray px-2">
+                    Log Out
+                  </p>
+                </div>
+              </div>
+              <div class="menu_btn d-md-none" onclick="show()">
+                <div class="lines"></div>
+                <div class="lines my-1"></div>
+                <div class="lines"></div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent active" id="tab_1">
+              <div class="row justify-content-center">
+                <div class="col-xl-9 col-lg-8 col-md-7 col-12 pe-lg-4">
+                  <div class="row">
+                    <div class="col-xl-3 col-6 px-2">
+                      <div class="bg-white card_dashboard">
+                        <p class="ff_Dm_sans fs_lg fw-normal clr_gray">
+                          Total Earning
+                        </p>
+                        <p class="ff_Dm_sans fs_lg fw-bold clr_gray">
+                          $ 120,000
+                        </p>
+                        <div
+                          class="d-flex align-items-center justify-content-between"
+                        >
+                          <p class="ff_Dm_sans fs_sm fw-bold mb-0 clr_gray">
+                            12%
+                            <span class="fs_xsm fw-normal clr_gray_100"
+                              >Increase From Target</span
+                            >
+                          </p>
+                          <span>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="8"
+                              height="12"
+                              viewBox="0 0 8 12"
+                              fill="none"
+                            >
+                              <path
+                                d="M3.5 11C3.5 11.2761 3.72386 11.5 4 11.5C4.27614 11.5 4.5 11.2761 4.5 11H3.5ZM4.35355 0.646446C4.15829 0.451184 3.84171 0.451184 3.64645 0.646446L0.464466 3.82843C0.269204 4.02369 0.269204 4.34027 0.464466 4.53553C0.659728 4.7308 0.976311 4.7308 1.17157 4.53553L4 1.70711L6.82843 4.53553C7.02369 4.7308 7.34027 4.7308 7.53553 4.53553C7.7308 4.34027 7.7308 4.02369 7.53553 3.82843L4.35355 0.646446ZM4.5 11L4.5 1H3.5L3.5 11H4.5Z"
+                                fill="#6D7D93"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-6 px-2">
+                      <div class="bg-white card_dashboard">
+                        <p class="ff_Dm_sans fs_lg fw-normal clr_gray">
+                          Invoices
+                        </p>
+                        <p class="ff_Dm_sans fs_lg fw-bold clr_gray">
+                          $ 16,500
+                        </p>
+                        <div
+                          class="d-flex align-items-center justify-content-between"
+                        >
+                          <p class="ff_Dm_sans fs_sm fw-bold mb-0 clr_gray">
+                            2%
+                            <span class="fs_xsm fw-normal clr_gray_100">
+                              Decrease From Target</span
+                            >
+                          </p>
+                          <span>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="8"
+                              height="12"
+                              viewBox="0 0 8 12"
+                              fill="none"
+                            >
+                              <path
+                                d="M4.5 1C4.5 0.723858 4.27614 0.5 4 0.5C3.72386 0.5 3.5 0.723858 3.5 1H4.5ZM3.64645 11.3536C3.84171 11.5488 4.15829 11.5488 4.35355 11.3536L7.53553 8.17157C7.7308 7.97631 7.7308 7.65973 7.53553 7.46447C7.34027 7.2692 7.02369 7.2692 6.82843 7.46447L4 10.2929L1.17157 7.46447C0.976311 7.2692 0.659728 7.2692 0.464466 7.46447C0.269204 7.65973 0.269204 7.97631 0.464466 8.17157L3.64645 11.3536ZM3.5 1V11H4.5V1H3.5Z"
+                                fill="#6D7D93"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-6 mt-3 mt-xl-0 px-2">
+                      <div class="bg-white card_dashboard">
+                        <p class="ff_Dm_sans fs_lg fw-normal clr_gray">
+                          Total Spending
+                        </p>
+                        <p class="ff_Dm_sans fs_lg fw-bold clr_gray">
+                          $ 48,670
+                        </p>
+                        <div
+                          class="d-flex align-items-center justify-content-between"
+                        >
+                          <p class="ff_Dm_sans fs_sm fw-bold mb-0 clr_gray">
+                            6%
+                            <span class="fs_xsm fw-normal clr_gray_100">
+                              Increase From Target</span
+                            >
+                          </p>
+                          <span>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="8"
+                              height="12"
+                              viewBox="0 0 8 12"
+                              fill="none"
+                            >
+                              <path
+                                d="M3.5 11C3.5 11.2761 3.72386 11.5 4 11.5C4.27614 11.5 4.5 11.2761 4.5 11H3.5ZM4.35355 0.646446C4.15829 0.451184 3.84171 0.451184 3.64645 0.646446L0.464466 3.82843C0.269204 4.02369 0.269204 4.34027 0.464466 4.53553C0.659728 4.7308 0.976311 4.7308 1.17157 4.53553L4 1.70711L6.82843 4.53553C7.02369 4.7308 7.34027 4.7308 7.53553 4.53553C7.7308 4.34027 7.7308 4.02369 7.53553 3.82843L4.35355 0.646446ZM4.5 11L4.5 1H3.5L3.5 11H4.5Z"
+                                fill="#6D7D93"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xl-3 col-6 mt-3 mt-xl-0 px-2">
+                      <div class="bg-white card_dashboard">
+                        <p class="ff_Dm_sans fs_lg fw-normal clr_gray">
+                          Balance
+                        </p>
+                        <p class="ff_Dm_sans fs_lg fw-bold clr_gray">
+                          $ 74,330
+                        </p>
+                        <div
+                          class="d-flex align-items-center justify-content-between"
+                        >
+                          <p class="ff_Dm_sans fs_sm fw-bold mb-0 clr_gray">
+                            1%
+                            <span class="fs_xsm fw-normal clr_gray_100"
+                              >Increase From Target</span
+                            >
+                          </p>
+                          <span>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="8"
+                              height="12"
+                              viewBox="0 0 8 12"
+                              fill="none"
+                            >
+                              <path
+                                d="M3.5 11C3.5 11.2761 3.72386 11.5 4 11.5C4.27614 11.5 4.5 11.2761 4.5 11H3.5ZM4.35355 0.646446C4.15829 0.451184 3.84171 0.451184 3.64645 0.646446L0.464466 3.82843C0.269204 4.02369 0.269204 4.34027 0.464466 4.53553C0.659728 4.7308 0.976311 4.7308 1.17157 4.53553L4 1.70711L6.82843 4.53553C7.02369 4.7308 7.34027 4.7308 7.53553 4.53553C7.7308 4.34027 7.7308 4.02369 7.53553 3.82843L4.35355 0.646446ZM4.5 11L4.5 1H3.5L3.5 11H4.5Z"
+                                fill="#6D7D93"
+                              />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="px-lg-4 py-5 mt-xl-5">
+                    <div class="text-end">
+                      <button
+                        class="ff_Dm_sans fs_sm fw-normal clr_gray earning_btn"
+                      >
+                        Total Earning
+                        <svg
+                          class="ms-3 ps-1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                        >
+                          <path
+                            d="M3 4.5L6 7.5L9 4.5"
+                            stroke="#6D7D93"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                      <button
+                        class="ff_Dm_sans fs_sm fw-normal clr_gray earning_btn ms-3"
+                      >
+                        Monthly
+                        <svg
+                          class="ms-3 ps-1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                        >
+                          <path
+                            d="M3 4.5L6 7.5L9 4.5"
+                            stroke="#6D7D93"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <img
+                      src=".//assets/img/webp/graph_img.webp"
+                      alt="graph"
+                      class="w-100"
+                    />
+                  </div>
+                  <div class="d-none d-md-block">
+                    <p class="ff_Dm_sans fs_xxl fw-bold clr_black pb-1">
+                      Activity Summary
+                    </p>
+                    <img
+                      src="./assets/img/webp/summary.webp"
+                      alt="Activity Summary"
+                      class="w-100"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="col-xl-3 col-lg-4 col-md-5 col-sm-8 col-12 ps-xl-4 pe-xl-0"
+                >
+                  <div
+                    class="px-4 bg-white py-4 card_account_book mt-4 mt-md-0"
+                  >
+                    <p
+                      class="ff_Dm_sans fs_xl fw-bold clr_black mb-4 mt-1 text-start"
+                    >
+                      My Account Bank
+                    </p>
+                    <img
+                      src="./assets/img/webp/Card.webp"
+                      alt="cards"
+                      class="w-100 mb-3"
+                    />
+                    <button
+                      class="mt-4 bg-transparent ff_Dm_sans fs_sm fw-bold clr_gray btn_add_card mb-3 d-flex align-items-center m-auto gap-2"
+                      onclick="myFunction()"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                      >
+                        <path
+                          d="M7 2.91667V11.0833"
+                          stroke="#6D7D93"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M2.91666 7H11.0833"
+                          stroke="#6D7D93"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      Add New Card
+                    </button>
+                    <div
+                      id="demo"
+                      class="d_none min-vh-100 w-100 position-absolute start-0 top-0 h-100"
+                    >
+                      <div
+                        class="d-flex justify-content-center align-items-center h-100"
+                      >
+                        <div class="bg-white p-sm-5 p-4 rounded-3">
+                          <div class="d-flex gap-md-5 gap-4 align-items-center">
+                            <p class="mb-0 ff_Dm_sans clr_gray fw-bold fs_xl">
+                              Enter Debit or Credit card details
+                            </p>
+                            <button
+                              id="close"
+                              class="border-0 bg-transparent"
+                              onclick="cardClose()"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="30"
+                                height="30"
+                                viewBox="0 0 40 40"
+                                fill="none"
+                              >
+                                <circle
+                                  cx="20"
+                                  cy="20"
+                                  r="19.5"
+                                  stroke="gray"
+                                />
+                                <path
+                                  d="M14.7678 13.3564L26.7886 25.4077L25.0209 27.1799L13.0001 15.1287L14.7678 13.3564Z"
+                                  fill="gray"
+                                />
+                                <path
+                                  d="M13.3943 25.0508L25.4151 12.9995L27.1829 14.7718L15.1621 26.823L13.3943 25.0508Z"
+                                  fill="gray"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                          <label
+                            for="Number"
+                            class="mt-5 ff_Dm_sans fs_lg fw-bold clr_gray"
+                            >Please enter vaild Card Number
+                          </label>
+                          <br />
+                          <input
+                            type="number"
+                            id="Number"
+                            class="border-0 border-bottom w-100 mt-2 pb-1"
+                            placeholder="Card Number"
+                          />
+                          <label
+                            for="expir_date"
+                            class="mt-4 ff_Dm_sans fs_lg fw-bold clr_gray"
+                            >Enter valid Expiry Date</label
+                          >
+                          <br />
+                          <div class="d-flex justify-content-between mb-4">
+                            <input
+                              type="date"
+                              id="expir_date"
+                              class="w-50 border-0 border-bottom mt-2 pb-1"
+                            />
+                            <input
+                              type="number"
+                              class="w-25 border-0 border-bottom mt-2 pb-1"
+                              placeholder="CVV"
+                            />
+                          </div>
+                          <input type="checkbox" name="agree" id="done" />
+                          <label for="done" class="ff_Dm_sans fs_lg fw-bold clr_gray cursor_pointer"
+                            >I agree to
+                            <span
+                              class="text-warning"
+                              >terms & conditions</span
+                            ></label
+                          >
+                          <button class="w-100 mt-4 bg-primary border-0 py-2 rounded-1 ff_Dm_sans fw-bold fs_md text-white">Submit</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-4 bg-white mt-xl-5 mt-4 target_card">
+                    <p class="ff_Dm_sans fs_xl fw-bold clr_black mb-1">
+                      Target
+                    </p>
+                    <div
+                      class="d-flex align-items-center justify-content-between target_card_child"
+                    >
+                      <div class="d-flex align-items-center gap-3">
+                        <img
+                          src="./assets/img/webp/sale.webp"
+                          alt="sale"
+                          width="48"
+                          height="48"
+                        />
+                        <div>
+                          <p
+                            class="mb-1 ff_Dm_sans fs_sm fw-bold text-capitalize clr_black"
+                          >
+                            Sale of goods
+                          </p>
+                          <p
+                            class="mb-0 ff_Dm_sans fs_xsm fw-bold text-capitalize clr_gray"
+                          >
+                            1 month later
+                          </p>
+                        </div>
+                      </div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M9 18L15 12L9 6"
+                          stroke="#6D7D93"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-between target_card_child"
+                    >
+                      <div class="d-flex align-items-center gap-3">
+                        <img
+                          src="./assets/img/webp/property.webp"
+                          alt="sale"
+                          width="48"
+                          height="48"
+                        />
+                        <div>
+                          <p
+                            class="mb-1 ff_Dm_sans fs_sm fw-bold text-capitalize clr_black"
+                          >
+                            property rental
+                          </p>
+                          <p
+                            class="mb-0 ff_Dm_sans fs_xsm fw-bold text-capitalize clr_gray"
+                          >
+                            3 month later
+                          </p>
+                        </div>
+                      </div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M9 18L15 12L9 6"
+                          stroke="#6D7D93"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-between target_card_child"
+                    >
+                      <div class="d-flex align-items-center gap-3">
+                        <img
+                          src="./assets/img/webp/design.webp"
+                          alt="sale"
+                          width="48"
+                          height="48"
+                        />
+                        <div>
+                          <p
+                            class="mb-1 ff_Dm_sans fs_sm fw-bold text-capitalize clr_black"
+                          >
+                            design services
+                          </p>
+                          <p
+                            class="mb-0 ff_Dm_sans fs_xsm fw-bold text-capitalize clr_gray"
+                          >
+                            1 month later
+                          </p>
+                        </div>
+                      </div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M9 18L15 12L9 6"
+                          stroke="#6D7D93"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-between target_card_child"
+                    >
+                      <div class="d-flex align-items-center gap-3">
+                        <img
+                          src="./assets/img/webp/service.webp"
+                          alt="sale"
+                          width="48"
+                          height="48"
+                        />
+                        <div>
+                          <p
+                            class="mb-1 ff_Dm_sans fs_sm fw-bold text-capitalize clr_black"
+                          >
+                            Service
+                          </p>
+                          <p
+                            class="mb-0 ff_Dm_sans fs_xsm fw-bold text-capitalize clr_gray"
+                          >
+                            4 month later
+                          </p>
+                        </div>
+                      </div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M9 18L15 12L9 6"
+                          stroke="#6D7D93"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-between target_card_child"
+                    >
+                      <div class="d-flex align-items-center gap-3">
+                        <img
+                          src="./assets/img/webp/sale.webp"
+                          alt="sale"
+                          width="48"
+                          height="48"
+                        />
+                        <div>
+                          <p
+                            class="mb-1 ff_Dm_sans fs_sm fw-bold text-capitalize clr_black"
+                          >
+                            Sale of goods
+                          </p>
+                          <p
+                            class="mb-0 ff_Dm_sans fs_xsm fw-bold text-capitalize clr_gray"
+                          >
+                            1 month later
+                          </p>
+                        </div>
+                      </div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M9 18L15 12L9 6"
+                          stroke="#6D7D93"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tabcontent" id="tab_2">
+              <div class="p-4 bg-white mt-xl-5 mt-4 target_card">
+                <p class="ff_Dm_sans fs_xl fw-bold clr_black mb-1">Target</p>
+                <div
+                  class="d-flex align-items-center justify-content-between target_card_child"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <img
+                      src="./assets/img/webp/sale.webp"
+                      alt="sale"
+                      width="48"
+                      height="48"
+                    />
+                    <div>
+                      <p
+                        class="mb-1 ff_Dm_sans fs_sm fw-bold text-capitalize clr_black"
+                      >
+                        Sale of goods
+                      </p>
+                      <p
+                        class="mb-0 ff_Dm_sans fs_xsm fw-bold text-capitalize clr_gray"
+                      >
+                        1 month later
+                      </p>
+                    </div>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M9 18L15 12L9 6"
+                      stroke="#6D7D93"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="d-flex align-items-center justify-content-between target_card_child"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <img
+                      src="./assets/img/webp/property.webp"
+                      alt="sale"
+                      width="48"
+                      height="48"
+                    />
+                    <div>
+                      <p
+                        class="mb-1 ff_Dm_sans fs_sm fw-bold text-capitalize clr_black"
+                      >
+                        property rental
+                      </p>
+                      <p
+                        class="mb-0 ff_Dm_sans fs_xsm fw-bold text-capitalize clr_gray"
+                      >
+                        3 month later
+                      </p>
+                    </div>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M9 18L15 12L9 6"
+                      stroke="#6D7D93"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="d-flex align-items-center justify-content-between target_card_child"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <img
+                      src="./assets/img/webp/design.webp"
+                      alt="sale"
+                      width="48"
+                      height="48"
+                    />
+                    <div>
+                      <p
+                        class="mb-1 ff_Dm_sans fs_sm fw-bold text-capitalize clr_black"
+                      >
+                        design services
+                      </p>
+                      <p
+                        class="mb-0 ff_Dm_sans fs_xsm fw-bold text-capitalize clr_gray"
+                      >
+                        1 month later
+                      </p>
+                    </div>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M9 18L15 12L9 6"
+                      stroke="#6D7D93"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="d-flex align-items-center justify-content-between target_card_child"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <img
+                      src="./assets/img/webp/service.webp"
+                      alt="sale"
+                      width="48"
+                      height="48"
+                    />
+                    <div>
+                      <p
+                        class="mb-1 ff_Dm_sans fs_sm fw-bold text-capitalize clr_black"
+                      >
+                        Service
+                      </p>
+                      <p
+                        class="mb-0 ff_Dm_sans fs_xsm fw-bold text-capitalize clr_gray"
+                      >
+                        4 month later
+                      </p>
+                    </div>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M9 18L15 12L9 6"
+                      stroke="#6D7D93"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="d-flex align-items-center justify-content-between target_card_child"
+                >
+                  <div class="d-flex align-items-center gap-3">
+                    <img
+                      src="./assets/img/webp/sale.webp"
+                      alt="sale"
+                      width="48"
+                      height="48"
+                    />
+                    <div>
+                      <p
+                        class="mb-1 ff_Dm_sans fs_sm fw-bold text-capitalize clr_black"
+                      >
+                        Sale of goods
+                      </p>
+                      <p
+                        class="mb-0 ff_Dm_sans fs_xsm fw-bold text-capitalize clr_gray"
+                      >
+                        1 month later
+                      </p>
+                    </div>
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M9 18L15 12L9 6"
+                      stroke="#6D7D93"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="tabcontent" id="tab_3">
+              <div class="px-lg-4 py-5 mt-xl-5">
+                <div class="text-end">
+                  <button
+                    class="ff_Dm_sans fs_sm fw-normal clr_gray earning_btn"
+                  >
+                    Total Earning
+                    <svg
+                      class="ms-3 ps-1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                    >
+                      <path
+                        d="M3 4.5L6 7.5L9 4.5"
+                        stroke="#6D7D93"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    class="ff_Dm_sans fs_sm fw-normal clr_gray earning_btn ms-3"
+                  >
+                    Monthly
+                    <svg
+                      class="ms-3 ps-1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                    >
+                      <path
+                        d="M3 4.5L6 7.5L9 4.5"
+                        stroke="#6D7D93"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <img
+                  src=".//assets/img/webp/graph_img.webp"
+                  alt="graph"
+                  class="w-100"
+                />
+              </div>
+            </div>
+            <div class="tabcontent" id="tab_4">
+              <div class="row justify-content-center">
+                <div class="col-xl-5 col-sm-8 col-12">
+                  <div
+                    class="px-4 bg-white py-4 card_account_book mt-4 mt-md-0"
+                  >
+                    <p
+                      class="ff_Dm_sans fs_xl fw-bold clr_black mb-4 mt-1 text-start"
+                    >
+                      My Account Bank
+                    </p>
+                    <img
+                      src="./assets/img/webp/Card.webp"
+                      alt="cards"
+                      class="w-100 mb-3"
+                    />
+                    <button
+                      class="mt-4 bg-transparent ff_Dm_sans fs_sm fw-bold clr_gray btn_add_card mb-3 d-flex align-items-center m-auto gap-2" 
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                      >
+                        <path
+                          d="M7 2.91667V11.0833"
+                          stroke="#6D7D93"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M2.91666 7H11.0833"
+                          stroke="#6D7D93"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      Add New Card
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tabcontent" id="tab_5">
+              <h5 class="ff_Dm_sans fw-bold fs_xxl clr_black">
+                You and Google
+              </h5>
+              <div class="bg-white target_card">
+                <div
+                  class="d-flex justify-content-between align-items-center p-3"
+                >
+                  <div class="d-flex gap-4">
+                    <img
+                      src="./assets/img/webp/nav_man.webp"
+                      alt="man"
+                      width="46"
+                      height="46"
+                      class="rounded-pill"
+                    />
+                    <div>
+                      <p class="mb-0 ff_Dm_sans fs_lg fw-bold clr_gray">
+                        Ankit
+                      </p>
+                      <p class="mb-0 ff_Dm_sans fs_sm fw-normal clr_gray">
+                        Syncing to godaraankit003@gmail.com
+                      </p>
+                    </div>
+                  </div>
+                  <button class="btn_log_out ff_Dm_sans fs_sm fw-bold clr_gray">
+                    Log Out
+                  </button>
+                </div>
+                <div
+                  class="border-top p-3 cursor_pointer d-flex justify-content-between"
+                >
+                  <p class="mb-0 ff_Dm_sans fs_md fw-normal clr_gray">
+                    Customise your Chrome profile
+                  </p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M9 18L15 12L9 6"
+                      stroke="#6D7D93"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="border-top p-3 cursor_pointer d-flex justify-content-between"
+                >
+                  <p class="mb-0 ff_Dm_sans fs_md fw-normal clr_gray">
+                    Manage your Google Account
+                  </p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M9 18L15 12L9 6"
+                      stroke="#6D7D93"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="border-top p-3 cursor_pointer d-flex justify-content-between"
+                >
+                  <p class="mb-0 ff_Dm_sans fs_md fw-normal clr_gray">
+                    Sync and Google services
+                  </p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M9 18L15 12L9 6"
+                      stroke="#6D7D93"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div
+                  class="border-top p-3 cursor_pointer d-flex justify-content-between"
+                >
+                  <p class="mb-0 ff_Dm_sans fs_md fw-normal clr_gray">
+                    Import bookmarks and settings
+                  </p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M9 18L15 12L9 6"
+                      stroke="#6D7D93"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div></div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/index.js"></script>
+  </body>
+</html>
