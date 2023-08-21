@@ -16,7 +16,7 @@ function openDashboard(evt, dashboard) {
 }
 document.getElementById("defaultOpen").click();
 
-function myFunction() {
+function addCard() {
   document.getElementById("demo").style.display = "block";
 }
 function cardClose() {
